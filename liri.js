@@ -1,7 +1,9 @@
 // Packages from node or npm
 const yargs = require('yargs');
 const _ = require('lodash');
-var Twitter = require('twitter');
+const axios = require('axios');
+const Twitter = require('twitter');
+const spotify = require('spotify');
 
 // Packages made inhouse
 const keys = require('./keys.js');
@@ -21,8 +23,6 @@ const argv = yargs
 // Retrieving user input from terminal
 var command = argv._[0];
 
-
-
 //Logic for commands
 if (command === 'my-tweets') {
     console.log('Retriving My Tweets');
@@ -39,4 +39,8 @@ if (command === 'my-tweets') {
             })
         }
     });
+} else if(command === 'spotify-this-song'){
+    console.log('Searching Through Spotify');
+    console.log('-------------------');
+    
 }
