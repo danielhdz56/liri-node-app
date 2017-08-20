@@ -5,6 +5,7 @@
   "main": "keys.js",
   "dependencies": {
     "axios": "^0.16.2",
+    "inquirer": "^3.2.2",
     "lodash": "^4.17.4",
     "node-spotify-api": "^1.0.7",
     "rotten-tomatoes": "^0.1.0",
