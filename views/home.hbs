@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{> head}}
+<body>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                {{> navbar}}
+                <div class="inner-cover">
+                    <p class="lead">Tweets | | Search</p>
+                    <form class="form-inline justify-content-center">
+                        <button id="twitterBtn" type="button" class="btn btn-info">Twitter</button>                        
+                        <div class="form-group ml-sm-3 mr-sm-1">
+                            <label for="search" class="sr-only">Search</label>
+                            <input type="text" class="form-control" id="searchInput" placeholder="Search!">
+                        </div>
+                        <button id="spotifyBtn" type="button" class="btn btn-success rounded-left not-rounded-right">Spotify</button>
+                        <button id="omdbBtn" type="button" class="btn btn-warning text-white not-rounded-left rounded-right">OMDB</button>                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{> scripts}}
+</body>
+</html>

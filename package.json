@@ -5,10 +5,13 @@
   "main": "keys.js",
   "dependencies": {
     "axios": "^0.16.2",
+    "express": "^4.15.4",
+    "hbs": "^4.0.1",
     "inquirer": "^3.2.2",
     "lodash": "^4.17.4",
     "node-spotify-api": "^1.0.7",
     "rotten-tomatoes": "^0.1.0",
+    "socket.io": "^2.0.3",
     "twitter": "^1.7.1",
     "yargs": "^8.0.2"
   },
