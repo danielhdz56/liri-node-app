@@ -175,6 +175,10 @@ body {
   margin-left: 4rem;
   margin-right: 4rem;
 }
+.mx-6rem {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
 .not-rounded-right {
   border-top-right-radius: 0rem;
   border-bottom-right-radius: 0rem;
@@ -182,4 +186,25 @@ body {
 .not-rounded-left {
   border-top-left-radius: 0rem;
   border-bottom-left-radius: 0rem;
+}
+.audio {
+  width: 447px;
+  background: rgba(0, 0, 0, 0.13);
+  padding: 0px 20px;
+  border: none;
+}
+.albumImage {
+  width: 50%;
+  margin: 0 auto;
+}
+.movie {
+  background: rgba(0, 0, 0, 0.13);
+  padding: 10px;
+  height: 100%;
+}
+.moviePoster {
+  height: 100%;
+}
+.bg-transparent{
+  background: transparent;
 }

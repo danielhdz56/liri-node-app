@@ -8,6 +8,7 @@ const io = require('socket.io')(server);
 
 const Twitter = require('twitter');
 const Spotify = require('node-spotify-api');
+const axios = require('axios');
 
 
 
@@ -66,11 +67,75 @@ io.on('connection', function (socket) {
                         }
                         allTweets.push(tweetData);
                     });
-                    socket.emit('buttonData', allTweets); //sends only to the one that requested it
+                    socket.emit('buttonTwitterData', allTweets); //sends only to the one that requested it
                 }
             });
         };
         runTwitter();
+    });
+    socket.on('spotify-this-song', function (data) {
+        runSpotify = (query) => {
+            query = query ? query : 'The Sign Ace of Base';
+            spotify.search({
+                type: 'track',
+                query,
+                limit: 5
+            }, function (err, data) {
+                if (err) {
+                    return console.log('Error occurred: ' + err);
+                }
+                var allSpotifyQueries = [];
+                var spotifyObj = data.tracks.items;
+                spotifyObj.forEach((song) => { // Ternary operators used for edge cases where property might be null/undefined
+                    songData = {
+                        artist: song.artists[0].name ? song.artists[0].name : 'Not Available',
+                        song: song.name ? song.name : 'Not Available',
+                        previewLink: song.preview_url ? song.preview_url : 'Not Available',
+                        album: song.album.name ? song.album.name : 'Not Available',
+                        albumImage: song.album.images[0].url ? song.album.images[0].url : 'Not Available'
+                    }
+                    allSpotifyQueries.push(songData);
+                });
+                socket.emit('buttonSpotifyData', allSpotifyQueries);
+            });
+        };
+        runSpotify(data);
+    });
+    socket.on('movie-this', function (data) {
+        runOmdb = (query) => {
+            query = query ? query : 'Mr. Nobody';
+            var omdbUrl = `http://www.omdbapi.com/?i=tt3896198&apikey=40e9cece&t=${query}`;
+            axios.get(omdbUrl).then((response) => {
+                var dataMovie = response.data;
+                var ratings = dataMovie.Ratings;
+                var plot = dataMovie.Plot;
+                plot = plot.replace(/\. /g, ".\n");
+                var actors = dataMovie.Actors;
+                actors = actors.replace(/\, /g, "\n");
+                var movieData = {
+                    title: dataMovie.Title,
+                    year: dataMovie.Year,
+                    website: dataMovie.Website ? dataMovie.Website : 'Not Available',
+                    imdbSource: ratings[0].Source,
+                    imdbRating: ratings[0].Value,
+                    rottenSource: ratings[1].Source,
+                    rottenRating: ratings[1].Value,
+                    metaSource: ratings[2].Source,
+                    metaRating: ratings[2].Value,
+                    country: dataMovie.Country,
+                    language: dataMovie.Language,
+                    plot,
+                    actors,
+                    poster: dataMovie.Poster
+                }
+                console.log(response.data)
+                socket.emit('buttonOmdbData', movieData);  
+            }).catch((e) => {
+                //console.log(e)
+                console.log(`From throw: ${e.message}`);
+            })
+        };
+        runOmdb(data);
     });
 });
 
