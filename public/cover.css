@@ -2,19 +2,24 @@
  * Globals
  */
 
+
 /* Links */
+
 a,
 a:focus,
 a:hover {
   color: #fff;
 }
 
+
 /* Custom default button */
+
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
   color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
+  text-shadow: none;
+  /* Prevent inheritance from `body` */
   background-color: #fff;
   border: .05rem solid #fff;
 }
@@ -29,31 +34,39 @@ body {
   height: 100%;
   background-color: #333;
 }
+
 body {
   color: #fff;
   text-align: center;
-  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
 }
 
+
 /* Extra markup and styles for table-esque vertical and horizontal centering */
+
 .site-wrapper {
   display: table;
   width: 100%;
-  height: 100%; /* For at least Firefox */
+  height: 100%;
+  /* For at least Firefox */
   min-height: 100%;
-  -webkit-box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
-          box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
+  -webkit-box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
+
 .site-wrapper-inner {
   display: table-cell;
   vertical-align: top;
 }
+
 .cover-container {
   margin-right: auto;
   margin-left: auto;
 }
 
+
 /* Padding for spacing */
+
 .inner {
   padding: 2rem;
 }
@@ -74,17 +87,17 @@ body {
 .nav-masthead .nav-link {
   padding: .25rem 0;
   font-weight: bold;
-  color: rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, .5);
   background-color: transparent;
   border-bottom: .25rem solid transparent;
 }
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255,255,255,.25);
+  border-bottom-color: rgba(255, 255, 255, .25);
 }
 
-.nav-masthead .nav-link + .nav-link {
+.nav-masthead .nav-link+.nav-link {
   margin-left: 1rem;
 }
 
@@ -110,6 +123,7 @@ body {
 .cover {
   padding: 0 1.5rem;
 }
+
 .cover .btn-lg {
   padding: .75rem 1.25rem;
   font-weight: bold;
@@ -121,7 +135,7 @@ body {
  */
 
 .mastfoot {
-  color: rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, .5);
 }
 
 
@@ -147,7 +161,8 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    width: 100%;
+    /* Must be percentage or pixels for horizontal alignment */
   }
 }
 
@@ -159,52 +174,200 @@ body {
   }
 }
 
-.card-block>a{
+.card-block>a {
   text-decoration: none
 }
 
 @media (min-width: 40rem) {
-  .mastAdjust{
+  .mastAdjust {
     margin-top: 10rem;
   }
 }
+
 .ml-4rem {
   margin-left: 4rem;
 }
+
 .mx-4rem {
   margin-left: 4rem;
   margin-right: 4rem;
 }
+
 .mx-6rem {
   margin-left: 6rem;
   margin-right: 6rem;
 }
-.not-rounded-right {
+
+.mt-6rem {
+  margin-top: 5rem;
+}
+
+.px-32px {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+#spotifyBtn {
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem;
   border-top-right-radius: 0rem;
   border-bottom-right-radius: 0rem;
 }
-.not-rounded-left {
+
+#omdbBtn {
   border-top-left-radius: 0rem;
   border-bottom-left-radius: 0rem;
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem;
 }
+
+.tweet {
+  width: 447px;
+  margin: 0 auto;
+}
+
+@media (max-width: 490px) {
+  #twitterBtn {
+    width: 345px;
+    margin-bottom: 1rem;
+  }
+  .tweet{
+    width: 345px;
+  }
+}
+
+@media (max-width: 411px) {
+  #searchInput {
+    width: 346px;
+    margin-bottom: -.8px;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+    border-left: 1px;
+    border-right: 1px;
+  }
+  #spotifyBtn,
+  #omdbBtn {
+    width: 173px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+}
+
+#twitterBtn,
+#spotifyBtn,
+#omdbBtn {
+  border-color: transparent;
+}
+
+
+
+.profileImage {
+  width: 80px;
+}
+
 .audio {
   width: 447px;
   background: rgba(0, 0, 0, 0.13);
   padding: 0px 20px;
   border: none;
 }
+
 .albumImage {
   width: 50%;
   margin: 0 auto;
 }
+
 .movie {
   background: rgba(0, 0, 0, 0.13);
   padding: 10px;
   height: 100%;
 }
+
 .moviePoster {
   height: 100%;
 }
-.bg-transparent{
+
+.text-muted-omdb {
+  color: rgb(181, 191, 202)
+}
+
+.bg-transparent {
   background: transparent;
+}
+
+.bg-light-transparent {
+  background: rgba(0, 0, 0, 0.13);
+}
+
+.bg-twitter {
+  background: rgb(67, 177, 245);
+}
+
+.bg-twitter:hover {
+  background: #1DA1F2;
+}
+.bg-twitter:focus {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.51);
+}
+
+.bg-twitter-transparent {
+  background: rgb(59, 155, 214);
+}
+
+.bg-spotify {
+  background: rgb(30, 215, 96);
+}
+
+.bg-spotify:hover {
+  background: rgb(29, 185, 84);
+}
+
+.bg-spotify-transparent {
+  background: rgba(8, 62, 27, 0.51);
+}
+
+.bg-omdb {
+  background: rgb(215, 201, 30);
+}
+
+.bg-omdb:hover {
+  background: rgb(185, 159, 29);
+}
+
+.bg-omdb-transparent {
+  background: rgba(154, 116, 1, 0.79);
+}
+
+.btn-code {
+  background: rgba(255, 255, 255, 0.93);
+  color: #bd4147;
+  width: 200px;
+}
+
+.btn-code:hover {
+  background: rgba(255, 255, 255, 0.73);
+  color: #bd4147;
+}
+
+.btn-code-inverse {
+  background: #bd4147;
+  ;
+  color: rgba(255, 255, 255, 0.93);
+  width: 200px;
+}
+
+.btn-code-inverse:hover {
+  background: rgb(232, 71, 78);
+  color: rgb(255, 255, 255);
+}
+
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+
+.jumbotron {
+  background: rgba(151, 161, 189, 0.7);
 }

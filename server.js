@@ -55,12 +55,14 @@ io.on('connection', function (socket) {
                 if (!error) {
                     var allTweets = [];
                     tweets.forEach((tweet) => {
+                        var image = tweet.user.profile_image_url;
+                        image = image.split('normal').join('400x400');
                         tweetData = {
                             created: tweet.created_at,
                             text: tweet.text,
                             name: tweet.user.name,
                             screenName: tweet.user.screen_name,
-                            image: tweet.user.profile_image_url,
+                            image,
                             favorite: tweet.favorited,
                             retweeted: tweet.retweeted,
                             quoted: tweet.is_quote_status
@@ -128,7 +130,6 @@ io.on('connection', function (socket) {
                     actors,
                     poster: dataMovie.Poster
                 }
-                console.log(response.data)
                 socket.emit('buttonOmdbData', movieData);  
             }).catch((e) => {
                 //console.log(e)
@@ -158,11 +159,11 @@ app.get('/about', (req, res) => {
     });
 });
 
-app.get('/info', (req, res) => {
-    res.render('info.hbs', {
-        pageTitle: 'Info',
+app.get('/contact', (req, res) => {
+    res.render('contact.hbs', {
+        pageTitle: 'Contact',
         active: {
-            info: true
+            contact: true
         }
     });
 });

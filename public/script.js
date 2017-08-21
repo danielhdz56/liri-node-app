@@ -18,14 +18,16 @@ $('#omdbBtn').on('click', function() {
 
 socket.on('buttonTwitterData', function (data) {
     $('.inner-cover').addClass('mastAdjust');
+    $('body').removeClass('bg-twitter-transparent bg-spotify-transparent bg-omdb-transparent').addClass('bg-twitter-transparent');    
+    $('html').removeClass('bg-twitter-transparent bg-spotify-transparent bg-omdb-transparent').addClass('bg-twitter-transparent');    
     var grid = $('<div>');
     grid.attr('id', 'socket');
     data.forEach((tweet) => {
         var card = $('<div>');
-        card.addClass('card text-left bg-info my-4 mx-4rem p-3').append(`<div class="card-block"><img class="float-left mr-3 rounded-circle" src="${tweet.image}"><a href="https://twitter.com/${tweet.screenName}" target="_blank"><h4>${tweet.name}</h4>`
+        card.addClass('card text-left bg-twitter my-4 p-3 tweet').append(`<div class="card-block"><img class="float-left mr-3 rounded-circle profileImage" src="${tweet.image}"><a href="https://twitter.com/${tweet.screenName}" target="_blank"><h4>${tweet.name}</h4>`
         + `<h6 class="card-subtitle mb-2">@${tweet.screenName}</h6></a>`
-        + `<p class="card-text ml-4rem">${tweet.text}</p>`
-        + '<a href="#" class="card-link ml-4rem">Card link</a><a href="#" class="card-link ml-4rem">Another link</a></div>');
+        + `<p class="card-text ml-6rem">${tweet.text}</p>`
+        + '<a href="#" class="card-link ml-6rem">Card link</a><a href="#" class="card-link ml-4rem">Another link</a></div>');
         grid.append(card);
     });
     $('.inner-cover').append(grid);
@@ -33,6 +35,8 @@ socket.on('buttonTwitterData', function (data) {
 
 socket.on('buttonSpotifyData', function(data){
     $('.inner-cover').addClass('mastAdjust');
+    $('body').removeClass('bg-twitter-transparent bg-spotify-transparent bg-omdb-transparent').addClass('bg-spotify-transparent');
+    $('html').removeClass('bg-twitter-transparent bg-spotify-transparent bg-omdb-transparent').addClass('bg-spotify-transparent');    
     var grid = $('<div>');
     grid.attr('id', 'socket');
     data.forEach((song) => {
@@ -47,8 +51,9 @@ socket.on('buttonSpotifyData', function(data){
 });
 
 socket.on('buttonOmdbData', function(data){
-
     $('.inner-cover').addClass('mastAdjust');
+    $('body').removeClass('bg-twitter-transparent bg-spotify-transparent bg-omdb-transparent').addClass('bg-omdb-transparent');    
+    $('html').removeClass('bg-twitter-transparent bg-spotify-transparent bg-omdb-transparent').addClass('bg-omdb-transparent');        
     var grid = $('<div>');
     grid.attr('id', 'socket').addClass('container').append('<div id="movieRow" class="row"></div>');
     $('.inner-cover').append(grid);
@@ -60,8 +65,8 @@ socket.on('buttonOmdbData', function(data){
     detailCard.addClass('card text-left mx-auto movie').append(`<div class="card-block"><h6>${data.title} (${data.year})</h6>
     <p class="card-text">${data.plot}</p>
     <p class="card-text"><strong>Actors:</strong> ${data.actors}</p>
-    <div class="text-center"><a href="${data.website}" target="_blank" class="btn btn-primary mb-3">Visit Website</a></div>
-    <div class="card-footer text-muted bg-transparent"><p>${data.imdbSource}: ${data.imdbRating}</p><p>${data.rottenSource}: ${data.rottenRating}</p><p>${data.metaSource}: ${data.metaRating}</p></div>`);
+    <div class="text-center"><a href="${data.website}" target="_blank" class="btn btn-code mb-3">Visit Website</a></div>
+    <div class="card-footer text-muted-omdb bg-transparent"><p>${data.imdbSource}: ${data.imdbRating}</p><p>${data.rottenSource}: ${data.rottenRating}</p><p>${data.metaSource}: ${data.metaRating}</p></div>`);
     infoColumn.append(detailCard);
     $('#movieRow').append(imageColumn, infoColumn);
 });

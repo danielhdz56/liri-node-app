@@ -7,11 +7,29 @@
             <div class="cover-container">
                 {{> navbar}}
 
-                <div class="inner-cover">
-                    <h1 class="cover-heading">Liri 3.0</h1>
-                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ex accusamus quod aliquid, quibusdam temporibus libero qui voluptas nulla, repellendus facere. Eum aspernatur maiores provident?</p>
-                    <p class="lead">
-                        <a href="" class="btn btn-lg btn-secondary">Learn More</a>
+                <div class="inner-cover mt-6rem">
+                    <h1 class="cover-heading">What is Liri?</h1>
+                    <h4 class="text-muted">In the beginning</h4>
+                    <p class="lead text-left mx-6rem">
+                        Liri was designed to be a command line interface version of Siri, requiring typing instead of voicing a request by the client.
+                        Powered by <code class="bg-light-transparent">node</code> users can run commands thad loaded up my twitter feed, or search for songs/movies.  
+                        </p>
+                    <h4 class="text-muted">That was liri 1.0</h4>
+                    <p class="lead text-left mx-6rem">
+                        After a "GUI" upgrade, liri 2.0 was born. 
+                        By using <code class="bg-light-transparent">inquirer.js</code> the client is asked to pick from a list of commands, easing the process of parsing input while improving the user experience.</p>
+                    <h4 class="text-muted">Liri 3.0, AKA BOSS LIRI</h4>
+                    <p class="lead text-left mx-6rem">
+                        This is BOSS LIRI. A website that uses <code class="bg-light-transparent">socket.io</code> to enable real-time bidrectional event-based communication.
+                         </p>
+                        <ul class="list-group mx-6rem">
+                            <li class="lead text-left list-group-item bg-twitter">Twitter requests dynamically creates a card loaded with my profile-image, tweet, twitter handler, and more.</li>
+                            <li class="lead text-left list-group-item bg-spotify">A Spotify search request dynamically loads 5 songs with song information, an audio preview, and the album picture.</li>
+                            <li class="lead text-left list-group-item bg-omdb">An Omdb search request dynamically loads a movie poster, ratings, website link, and more. </li>
+                        </ul> 
+                   
+                    <p class="lead mt-4">
+                        <a href="https://github.com/danielhdz56/liri-node-app" class="btn btn-lg btn-code">View Code!</a>
                     </p>
                 </div>
             </div>
