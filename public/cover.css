@@ -249,8 +249,11 @@ body {
 }
 
 @media (max-width: 411px) {
+  .form-group{
+    width: 100%;
+  }
   #searchInput {
-    width: 346px;
+    /* width: 346px; */
     margin-bottom: -.8px;
     border-bottom-left-radius: 0rem;
     border-bottom-right-radius: 0rem;
@@ -259,9 +262,38 @@ body {
   }
   #spotifyBtn,
   #omdbBtn {
-    width: 173px;
+    width: 50%;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
+  }
+}
+
+@media (min-width: 411px) {
+  #twitterBtn{
+    width: 347px;
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 512px) {
+  .form-group{
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+}
+@media (min-width: 604px) {
+  #twitterBtn{
+    width: auto;
+    margin-bottom: 0px;
+    margin-right: 1rem;
+  }
+  #searchInput{
+    border-right: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  #spotifyBtn{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
 }
 
