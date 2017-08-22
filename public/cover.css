@@ -114,6 +114,16 @@ body {
     float: right;
   }
 }
+@media (max-width: 48em){
+  #about {
+    margin-top: 8rem;
+  }
+}
+@media(max-width: 639px){
+  #about {
+    margin-top: 0rem;
+  }
+}
 
 
 /*
@@ -206,6 +216,12 @@ body {
   padding-left: 32px;
   padding-right: 32px;
 }
+@media(max-width: 425px){
+  #about>.mx-6rem{
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
 
 #spotifyBtn {
   border-top-left-radius: .25rem;
@@ -225,7 +241,8 @@ body {
   width: 447px;
   margin: 0 auto;
 }
-.form-group{
+
+.form-group {
   margin-left: 1rem;
   margin-right: .25rem;
 }
@@ -236,10 +253,10 @@ body {
     width: 100%;
     margin-bottom: 1rem;
   }
-  .tweet{
+  .tweet {
     width: 345px;
   }
-  .form-group{
+  .form-group {
     margin-left: 0rem;
     margin-right: 0rem;
   }
@@ -249,7 +266,7 @@ body {
 }
 
 @media (max-width: 411px) {
-  .form-group{
+  .form-group {
     width: 100%;
   }
   #searchInput {
@@ -269,31 +286,41 @@ body {
 }
 
 @media (min-width: 411px) {
-  #twitterBtn{
+  #twitterBtn {
     width: 347px;
     margin-bottom: 1rem;
   }
-}
-@media (min-width: 512px) {
-  .form-group{
-    margin-left: 0rem;
-    margin-right: 0rem;
+  #spotifyBtn,
+  #omdbBtn {
+    border-top: 0px;
+    border-bottom: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
-}
-@media (min-width: 604px) {
-  #twitterBtn{
-    width: auto;
-    margin-bottom: 0px;
-    margin-right: 1rem;
-  }
-  #searchInput{
+  #searchInput {
     border-right: 0px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
   }
-  #spotifyBtn{
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+}
+
+@media (min-width: 512px) {
+  .form-group {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+}
+
+@media (min-width: 604px) {
+  #twitterBtn {
+    width: auto;
+    margin-bottom: 0px;
+    margin-right: 1rem;
+  }
+  #searchInput {
+    border-right: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 }
 
@@ -302,8 +329,6 @@ body {
 #omdbBtn {
   border-color: transparent;
 }
-
-
 
 .profileImage {
   width: 80px;
@@ -350,6 +375,7 @@ body {
 .bg-twitter:hover {
   background: #1DA1F2;
 }
+
 .bg-twitter:focus {
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.51);
 }

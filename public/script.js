@@ -34,9 +34,7 @@ socket.on('buttonTwitterData', function (data) {
 });
 
 socket.on('buttonSpotifyData', function(data){
-    $('.inner-cover').addClass('mastAdjust');
-    $('body').removeClass('bg-twitter-transparent bg-spotify-transparent bg-omdb-transparent').addClass('bg-spotify-transparent');
-    $('html').removeClass('bg-twitter-transparent bg-spotify-transparent bg-omdb-transparent').addClass('bg-spotify-transparent');    
+    $('.inner-cover').addClass('mastAdjust');   
     var grid = $('<div>');
     grid.attr('id', 'socket');
     data.forEach((song) => {
@@ -51,16 +49,14 @@ socket.on('buttonSpotifyData', function(data){
 });
 
 socket.on('buttonOmdbData', function(data){
-    $('.inner-cover').addClass('mastAdjust');
-    $('body').removeClass('bg-twitter-transparent bg-spotify-transparent bg-omdb-transparent').addClass('bg-omdb-transparent');    
-    $('html').removeClass('bg-twitter-transparent bg-spotify-transparent bg-omdb-transparent').addClass('bg-omdb-transparent');        
+    $('.inner-cover').addClass('mastAdjust');   
     var grid = $('<div>');
     grid.attr('id', 'socket').addClass('container').append('<div id="movieRow" class="row"></div>');
     $('.inner-cover').append(grid);
     var imageColumn = $('<div>');
-    imageColumn.addClass("col-6 mt-4").append(`<img class="img-fluid moviePoster" src="${data.poster}" alt="movie poster">`);
+    imageColumn.addClass("col-12 col-sm-5 mt-4").append(`<img class="img-fluid moviePoster" src="${data.poster}" alt="movie poster">`);
     var infoColumn = $('<div>');
-    infoColumn.addClass("col-6 mt-4");
+    infoColumn.addClass("col-12 col-sm-7 mt-4");
     var detailCard = $('<div>');
     detailCard.addClass('card text-left mx-auto movie').append(`<div class="card-block"><h6>${data.title} (${data.year})</h6>
     <p class="card-text">${data.plot}</p>
