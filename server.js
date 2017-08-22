@@ -83,22 +83,24 @@ io.on('connection', function (socket) {
                 query,
                 limit: 5
             }, function (err, data) {
-                if (err) {
-                    return console.log('Error occurred: ' + err);
+                if (err || data.tracks.items.length === 0) {
+                    var errorStatus = 'error';
+                    socket.emit('buttonSpotifyData', errorStatus);
+                } else {
+                    var allSpotifyQueries = [];
+                    var spotifyObj = data.tracks.items;
+                    spotifyObj.forEach((song) => { // Ternary operators used for edge cases where property might be null/undefined
+                        songData = {
+                            artist: song.artists[0].name ? song.artists[0].name : 'Not Available',
+                            song: song.name ? song.name : 'Not Available',
+                            previewLink: song.preview_url ? song.preview_url : 'Not Available',
+                            album: song.album.name ? song.album.name : 'Not Available',
+                            albumImage: song.album.images[0].url ? song.album.images[0].url : 'Not Available'
+                        }
+                        allSpotifyQueries.push(songData);
+                    });
+                    socket.emit('buttonSpotifyData', allSpotifyQueries);
                 }
-                var allSpotifyQueries = [];
-                var spotifyObj = data.tracks.items;
-                spotifyObj.forEach((song) => { // Ternary operators used for edge cases where property might be null/undefined
-                    songData = {
-                        artist: song.artists[0].name ? song.artists[0].name : 'Not Available',
-                        song: song.name ? song.name : 'Not Available',
-                        previewLink: song.preview_url ? song.preview_url : 'Not Available',
-                        album: song.album.name ? song.album.name : 'Not Available',
-                        albumImage: song.album.images[0].url ? song.album.images[0].url : 'Not Available'
-                    }
-                    allSpotifyQueries.push(songData);
-                });
-                socket.emit('buttonSpotifyData', allSpotifyQueries);
             });
         };
         runSpotify(data);
@@ -130,16 +132,15 @@ io.on('connection', function (socket) {
                     actors,
                     poster: dataMovie.Poster
                 }
-                socket.emit('buttonOmdbData', movieData);  
+                socket.emit('buttonOmdbData', movieData);
             }).catch((e) => {
-                //console.log(e)
-                console.log(`From throw: ${e.message}`);
+                var errorStatus = 'error';
+                socket.emit('buttonOmdbData', errorStatus);
             })
         };
         runOmdb(data);
     });
 });
-
 
 app.get('/', (req, res) => {
     res.render('home.hbs', {
