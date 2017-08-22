@@ -18,8 +18,8 @@ $('#omdbBtn').on('click', function() {
 
 socket.on('buttonTwitterData', function (data) {
     $('.inner-cover').addClass('mastAdjust');
-    $('body').removeClass('bg-twitter-transparent bg-spotify-transparent bg-omdb-transparent').addClass('bg-twitter-transparent');    
-    $('html').removeClass('bg-twitter-transparent bg-spotify-transparent bg-omdb-transparent').addClass('bg-twitter-transparent');    
+    $('body').removeClass('bg-twitter-transparent').addClass('bg-twitter-transparent');    
+    $('html').removeClass('bg-twitter-transparent').addClass('bg-twitter-transparent');    
     var grid = $('<div>');
     grid.attr('id', 'socket');
     data.forEach((tweet) => {
@@ -34,7 +34,9 @@ socket.on('buttonTwitterData', function (data) {
 });
 
 socket.on('buttonSpotifyData', function(data){
-    $('.inner-cover').addClass('mastAdjust');   
+    $('.inner-cover').addClass('mastAdjust');
+    $('body').removeClass('bg-twitter-transparent');
+    $('html').removeClass('bg-twitter-transparent');    
     var grid = $('<div>');
     grid.attr('id', 'socket');
     data.forEach((song) => {
@@ -49,7 +51,9 @@ socket.on('buttonSpotifyData', function(data){
 });
 
 socket.on('buttonOmdbData', function(data){
-    $('.inner-cover').addClass('mastAdjust');   
+    $('.inner-cover').addClass('mastAdjust');  
+    $('body').removeClass('bg-twitter-transparent');
+    $('html').removeClass('bg-twitter-transparent'); 
     var grid = $('<div>');
     grid.attr('id', 'socket').addClass('container').append('<div id="movieRow" class="row"></div>');
     $('.inner-cover').append(grid);
