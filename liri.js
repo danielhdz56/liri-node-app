@@ -38,6 +38,10 @@ var runCommand = (command, query) => {
         var doQuery = doWhatItSays.split(',')[1];
         runCommand(doCommand, doQuery);
         commands.runAddLog(command);
+    } else {
+        console.log('Please make sure that you enter a valid command');
+        console.log('----------')
+        console.log('To view the list of commands availabe type:\nnode liri.js --help');
     }
 };
 runCommand(command, query);
