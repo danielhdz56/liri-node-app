@@ -39,9 +39,7 @@ var runCommand = (command, query) => {
         runCommand(doCommand, doQuery);
         commands.runAddLog(command);
     } else {
-        console.log('Please make sure that you enter a valid command');
-        console.log('----------')
-        console.log('To view the list of commands availabe type:\nnode liri.js --help');
+        commands.runInvalidCommand();
     }
 };
 runCommand(command, query);

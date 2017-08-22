@@ -118,10 +118,17 @@ var runAddLog = (command, query) => { //query is optional
     return log; //this will run undefined if no log
 };
 
+var runInvalidCommand = () => {
+    console.log('Please make sure that you enter a valid command');
+    console.log('----------')
+    console.log('To view the list of commands availabe type:\nnode liri.js --help');
+}
+
 module.exports = {
     runTwitter,
     runSpotify,
     runOmdb,
     runDoWhatItSays,
-    runAddLog
+    runAddLog,
+    runInvalidCommand
 }
