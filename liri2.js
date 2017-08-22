@@ -38,6 +38,9 @@ var app = () => {
                 commands.runAddLog(command, query);
             } else if (command === 'do-what-it-says') {
                 var doWhatItSays = commands.runDoWhatItSays();
+                doWhatItSays = doWhatItSays.split('\n');
+                var randomCommand = Math.floor(Math.random()*doWhatItSays.length);
+                doWhatItSays = doWhatItSays[randomCommand];
                 var doCommand = doWhatItSays.split(',')[0];
                 var doQuery = doWhatItSays.split(',')[1];
                 runCommand(doCommand, doQuery);
