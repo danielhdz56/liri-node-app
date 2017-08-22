@@ -26,8 +26,7 @@ socket.on('buttonTwitterData', function (data) {
         var card = $('<div>');
         card.addClass('card text-left bg-twitter my-4 p-3 tweet').append(`<div class="card-block"><img class="float-left mr-3 rounded-circle profileImage" src="${tweet.image}"><a href="https://twitter.com/${tweet.screenName}" target="_blank"><h4>${tweet.name}</h4>` +
             `<h6 class="card-subtitle mb-2">@${tweet.screenName}</h6></a>` +
-            `<p class="card-text ml-6rem">${tweet.text}</p>` +
-            '<a href="#" class="card-link ml-6rem">Card link</a><a href="#" class="card-link ml-4rem">Another link</a></div>');
+            `<p class="card-text ml-6rem">${tweet.text}</p>`);
         grid.append(card);
     });
     $('.inner-cover').append(grid);
