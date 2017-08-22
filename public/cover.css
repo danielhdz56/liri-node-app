@@ -225,14 +225,26 @@ body {
   width: 447px;
   margin: 0 auto;
 }
+.form-group{
+  margin-left: 1rem;
+  margin-right: .25rem;
+}
 
-@media (max-width: 490px) {
+@media (max-width: 511px) {
   #twitterBtn {
-    width: 345px;
+    /* width: 345px; */
+    width: 100%;
     margin-bottom: 1rem;
   }
   .tweet{
     width: 345px;
+  }
+  .form-group{
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+  #searchInput {
+    border-right: 0rem;
   }
 }
 
@@ -266,7 +278,7 @@ body {
 }
 
 .audio {
-  width: 447px;
+  /* width: 447px; */
   background: rgba(0, 0, 0, 0.13);
   padding: 0px 20px;
   border: none;
