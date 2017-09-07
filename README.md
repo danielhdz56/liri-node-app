@@ -35,3 +35,4 @@ spotify-this-song | `node liri.js spotify-this-song 'Tongue Tied'` ![spotify](/a
 movie-this | `node liri.js movie-this 'Titanic'` ![omdb](/assets/omdb-v1.gif?raw=true "Omdb")
 do-what-it-says | `node liri.js do-what-it-says` ![random](/assets/random-v1.gif?raw=true "random")
 
+![twitter](/assets/tweets-v1.gif?raw=true "Twitter")
