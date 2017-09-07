@@ -26,13 +26,11 @@ Access help by using the `--help` or `-h` flag
 ```shellSession
 node app-promise.js --help
 ```
-![help](/assets/help-liri-v1.gif?raw=true "Help")
+![help](/assets_readme/help-liri-v1.gif?raw=true "Help")
 ### Possible entries
 Command | `node liri.js [inputCommandHere] [inputSearch]`
  :---: | :---:
-my-tweets | `node liri.js my-tweets` ![twitter](/assets/tweets-v1.gif?raw=true "Twitter")
-spotify-this-song | `node liri.js spotify-this-song 'Tongue Tied'` ![spotify](/assets/spotify-v1.gif?raw=true "Spotify")
-movie-this | `node liri.js movie-this 'Titanic'` ![omdb](/assets/omdb-v1.gif?raw=true "Omdb")
-do-what-it-says | `node liri.js do-what-it-says` ![random](/assets/random-v1.gif?raw=true "random")
-
-![twitter](/assets/tweets-v1.gif?raw=true "Twitter")
+my-tweets | `node liri.js my-tweets` ![twitter](/assets_readme/tweets-v1.gif?raw=true "Twitter")
+spotify-this-song | `node liri.js spotify-this-song 'Tongue Tied'` ![spotify](/assets_readme/spotify-v1.gif?raw=true "Spotify")
+movie-this | `node liri.js movie-this 'Titanic'` ![omdb](/assets_readme/omdb-v1.gif?raw=true "Omdb")
+do-what-it-says | `node liri.js do-what-it-says` ![random](/assets_readme/random-v1.gif?raw=true "random")
